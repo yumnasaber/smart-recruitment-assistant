@@ -2,7 +2,7 @@
 
 A small machine learning project that estimates how likely a candidate is to be open to a job change, so a recruiter can tell who is worth contacting first.
 
-I built it during my AI training at the Information Technology Institute (ITI), using Python and scikit-learn.
+I built it during my AI summer training at the Information Technology Institute (ITI), using Python and scikit-learn.
 
 ## The idea
 
@@ -10,7 +10,7 @@ Only about 1 in 4 candidates in the data is actually looking to change jobs. If 
 
 ## The data
 
-I used the public HR Analytics: Job Change of Data Scientists dataset. It has 19,158 rows and 13 columns, including city development index, education, experience, company size and type, training hours and how long ago the person last changed jobs. After removing 49 duplicate rows, 19,109 candidates were left.
+I used the public HR Analytics: Job Change of Data Scientists dataset from Kaggle. It has 19,158 rows and 13 columns, including city development index, education, experience, company size and type, training hours and how long ago the person last changed jobs. After removing 49 duplicate rows, 19,109 candidates were left.
 
 The target is 1 if the person is looking for a job change and 0 if not. The split is roughly 25% / 75%.
 
@@ -58,13 +58,23 @@ This only shows what the model uses to make its predictions. It doesn't say why 
 ## Files
 
 - `Smart_Recruitment_Assistant.ipynb`: the full notebook (cleaning, EDA, models, evaluation)
+- `aug_train.csv`: the original dataset
 - `processed_recruitment_data.csv`: the cleaned dataset
 - `smart_recruitment_rf_model.pkl`: the trained Random Forest pipeline
 - `images/`: charts exported from the notebook
 
 ## Running it
 
-Download `aug_train.csv` from the dataset page, open the notebook in Google Colab, update the file path in the first data-loading cell, and run all cells.
+The original dataset is included in this repo as `aug_train.csv`, so nothing else needs to be downloaded.
+
+1. Open `Smart_Recruitment_Assistant.ipynb` in Google Colab.
+2. In the first data-loading cell, replace the file path with:
+
+```python
+df = pd.read_csv('https://raw.githubusercontent.com/yumnasaber/smart-recruitment-assistant/main/aug_train.csv')
+```
+
+3. Run all cells from top to bottom.
 
 To use the saved model:
 

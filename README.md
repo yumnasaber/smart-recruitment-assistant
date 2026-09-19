@@ -110,4 +110,4 @@ predictions = (probabilities >= 0.54).astype(int)
 **Yomna Saber**
 AI & Data Science Enthusiast | Aspiring AI Engineer | Data Analyst
 
-🔗 [LinkedIn](www.linkedin.com/in/yomnasaber)
+🔗 [LinkedIn](https://www.linkedin.com/in/yomnasaber)

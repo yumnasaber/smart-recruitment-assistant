@@ -76,3 +76,19 @@ The original dataset is included in this repo (`aug_train.csv`), so you don't ne
 ```python
 import pandas as pd
 df = pd.read_csv('[https://raw.githubusercontent.com/yumnasaber/smart-recruitment-assistant/main/aug_train.csv](https://raw.githubusercontent.com/yumnasaber/smart-recruitment-assistant/main/aug_train.csv)')
+
+ * Run all cells from top to bottom.
+To use the saved model on new data:
+import joblib
+
+# Load the trained pipeline
+model = joblib.load('smart_recruitment_rf_model.pkl')
+
+# Get probabilities for the positive class
+probabilities = model.predict_proba(X_new)[:, 1]
+
+# Apply the tuned threshold of 0.54
+predictions = (probabilities >= 0.54).astype(int)
+
+(Note: X_new needs the exact same columns as the training features, excluding target and city).
+Author: Yomna Saber | LinkedIn
